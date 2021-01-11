@@ -24,3 +24,4 @@ jobs:
     - name: Test 
       run: |
         python --version
+        ./request.py
