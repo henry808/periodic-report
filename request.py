@@ -1,16 +1,20 @@
 #!/usr/bin/env python3
 
-import requests, os
+import requests, os, pprint, time
 
-response = requests.get('https://api.github.com')
+
+response = requests.get('https://api.coindesk.com/v1/bpi/currentprice.json')
 
 print(response.status_code)
-print(response.text)
+
+timestr = time.strftime("-%Y-%m-%d--%H-%M")
 
 file_dir = os.path.dirname(__file__)
-file_name = "data.txt"
+file_name = "data" + timestr + ".txt"
 
 file_path = os.path.join(file_dir, file_name)
 
+pretty_text = pprint.pformat(response.text, indent=4)
+
 with open(file_path, "w") as f:
-	f.write(response.text)
+	f.write(pretty_text)
