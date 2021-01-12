@@ -19,7 +19,6 @@ if __name__ == "__main__":
 
 	file_dir = os.path.dirname(__file__)
 	file_name = "data" + timestr + ".txt"
-
 	file_path = os.path.join(file_dir, file_name)
 
 	pretty_text = pprint.pformat(response.text, indent=4)
