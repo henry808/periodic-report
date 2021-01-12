@@ -1,20 +1,28 @@
 #!/usr/bin/env python3
 
-import requests, os, pprint, time
+import requests, os, pprint, time, sys
 
 
-response = requests.get('https://api.coindesk.com/v1/bpi/currentprice.json')
+if __name__ == "__main__":
 
-print(response.status_code)
+	url = 'https://api.coindesk.com/v1/bpi/currentprice.json'
 
-timestr = time.strftime("-%Y-%m-%d--%H-%M")
+	response = requests.get(url)
 
-file_dir = os.path.dirname(__file__)
-file_name = "data" + timestr + ".txt"
+	if response.status_code == 200:
+		print(response.status_code)
+	else:
+		print("Error, repsonse code = " + response.status_code)
+		sys.exit()
 
-file_path = os.path.join(file_dir, file_name)
+	timestr = time.strftime("-%Y-%m-%d--%H-%M")
 
-pretty_text = pprint.pformat(response.text, indent=4)
+	file_dir = os.path.dirname(__file__)
+	file_name = "data" + timestr + ".txt"
 
-with open(file_path, "w") as f:
-	f.write(pretty_text)
+	file_path = os.path.join(file_dir, file_name)
+
+	pretty_text = pprint.pformat(response.text, indent=4)
+
+	with open(file_path, "w") as f:
+		f.write(pretty_text)
