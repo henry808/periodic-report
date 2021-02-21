@@ -1,0 +1,10 @@
+('{"time":{"updated":"Feb 21, 2021 04:03:00 '
+ 'UTC","updatedISO":"2021-02-21T04:03:00+00:00","updateduk":"Feb 21, 2021 at '
+ '04:03 GMT"},"disclaimer":"This data was produced from the CoinDesk Bitcoin '
+ 'Price Index (USD). Non-USD currency data converted using hourly conversion '
+ 'rate from '
+ 'openexchangerates.org","chartName":"Bitcoin","bpi":{"USD":{"code":"USD","symbol":"&#36;","rate":"56,508.1452","description":"United '
+ 'States '
+ 'Dollar","rate_float":56508.1452},"GBP":{"code":"GBP","symbol":"&pound;","rate":"40,315.4537","description":"British '
+ 'Pound '
+ 'Sterling","rate_float":40315.4537},"EUR":{"code":"EUR","symbol":"&euro;","rate":"46,630.6345","description":"Euro","rate_float":46630.6345}}}')
